@@ -1,7 +1,7 @@
 ---
 import "../styles/site.css";
 
-const telegramUrl = "https://t.me/+vvxMjHuYEOgxMWI1";
+const telegramUrl = "https://telegram.me/+vvxMjHuYEOgxMWI1";
 const instagramUrl = "https://www.instagram.com/spectrasec.id/";
 
 const insights = [
@@ -50,6 +50,7 @@ const members = [
     role: "Instruktur / Security Researcher",
     summary: "Instruktur SpectraSec dan ethical hacker peringkat #1 KOMDIGI-CSIRT. Fokus pada web application security dan responsible disclosure.",
     tags: ["KOMDIGI #1", "Web Security"],
+    achievements: ["Rank #1 KOMDIGI-CSIRT", "Lvl 3 Expert", "Expert Hunter Silver", "System Breaker Silver", "Researcher Silver"],
     image: "/members/musa.webp",
     position: "center center",
     credit: "Foto: Instagram / sumber anggota",
@@ -65,6 +66,7 @@ const members = [
     role: "Bug Hunter / Network Engineer",
     summary: "Pelajar dan security researcher yang memperoleh rekognisi NASA bersama Balqis melalui pelaporan kerentanan yang bertanggung jawab.",
     tags: ["NASA Recognition", "Pentesting"],
+    achievements: ["NASA Letter of Recognition", "Broken link checking", "SMK Taruna Bhakti Depok", "Apresiasi Pemkot Depok"],
     image: "/members/rakha-balqis.webp",
     position: "left center",
     credit: "Foto: RRI / SMK Taruna Bhakti",
@@ -79,6 +81,7 @@ const members = [
     role: "Network Engineer / Junior Pentester",
     summary: "Praktisi jaringan dan mahasiswa Teknik Multimedia dan Jaringan yang aktif mendalami bug bounty, routing, dan keamanan siber.",
     tags: ["MTCNA", "Network Security"],
+    achievements: ["Network security learner", "MTCNA track", "Bug bounty fundamentals", "Routing & infrastructure"],
     image: "/members/radit.webp",
     position: "center center",
     credit: "Foto: Instagram / sumber anggota",
@@ -93,6 +96,7 @@ const members = [
     role: "Security Researcher",
     summary: "Peneliti keamanan yang tercatat di Nokia Coordinated Vulnerability Disclosure Hall of Fame edisi April 2026.",
     tags: ["Nokia Hall of Fame", "CVD"],
+    achievements: ["Nokia CVD Hall of Fame", "Responsible disclosure", "Web security research"],
     image: "/members/rizki.webp",
     position: "center center",
     credit: "Foto profil: LinkedIn",
@@ -104,6 +108,7 @@ const members = [
     role: "Cloud & Security Enthusiast",
     summary: "Talenta lintas disiplin dengan fokus cloud engineering dan kontribusi responsible disclosure pada institusi internasional.",
     tags: ["Cloud", "Responsible Disclosure"],
+    achievements: ["Cloud engineering", "Google Cloud learning path", "DevOps fundamentals", "Responsible disclosure"],
     links: [
       ["LinkedIn", "https://id.linkedin.com/in/ferryfarhan/en"],
       ["Hall of Fame", "https://www.surf.nl/en/hall-of-fame-0"],
@@ -115,6 +120,7 @@ const members = [
     role: "Bug Hunter / Security Researcher",
     summary: "Kontributor KOMDIGI-CSIRT dengan alias likkk_39. Aktif melaporkan kerentanan sistem pemerintah melalui jalur legal.",
     tags: ["KOMDIGI #4", "Bug Hunting"],
+    achievements: ["KOMDIGI-CSIRT hunter", "High severity reporting", "Bug hunting", "Responsible disclosure"],
     image: "/members/malik.webp",
     position: "center center",
     credit: "Foto: file anggota",
@@ -129,6 +135,7 @@ const members = [
     role: "Fullstack Developer / Security Researcher",
     summary: "Builder produk fullstack dan security automation, termasuk BLH Hunter. Fokus pada sistem bisnis dan responsible disclosure.",
     tags: ["Fullstack", "Security Automation"],
+    achievements: ["Fullstack developer", "BLH Hunter", "Security automation", "NASA VDP research", "hammad.biz.id"],
     image: "/members/hammad-instagram.webp",
     position: "center center",
     credit: "Foto: Instagram / sumber anggota",
@@ -144,6 +151,7 @@ const members = [
     role: "Young Security Researcher",
     summary: "Peneliti muda dari Subang dengan rekognisi NASA atas responsible disclosure dan dukungan pengembangan riset dari BRIN.",
     tags: ["NASA Recognition", "OSINT"],
+    achievements: ["NASA Letter of Recognition", "OSINT research", "BRIN research support", "ASEAN Scholarship target"],
     image: "/members/firoos.webp",
     position: "75% center",
     credit: "Foto: dokumentasi publik",
@@ -155,6 +163,7 @@ const members = [
     role: "Security Researcher / Network Student",
     summary: "Pelajar SMK Taruna Bhakti dan rekan riset Rakha yang memperoleh letter of recognition setelah melaporkan temuan ke NASA.",
     tags: ["NASA Recognition", "Networking"],
+    achievements: ["NASA Letter of Recognition", "Broken link checking", "SMK Taruna Bhakti Depok", "Responsible disclosure"],
     image: "/members/rakha-balqis.webp",
     position: "right center",
     credit: "Foto: RRI / SMK Taruna Bhakti",
@@ -181,6 +190,8 @@ const structuredData = {
         name: member.name,
         roleName: member.role,
         description: member.summary,
+        award: member.achievements,
+        knowsAbout: member.tags,
         image: member.image ? `https://spectrasec.id${member.image}` : undefined,
         sameAs: member.links.map((link) => link[1]),
       })),
@@ -192,7 +203,27 @@ const structuredData = {
       name: "SpectraSec.id",
       publisher: { "@id": "https://spectrasec.id/#organization" },
       inLanguage: "id-ID",
-      keywords: ["SpectraSec", "SpectraSec.id", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", ...memberNames],
+      keywords: ["SpectraSec", "SpectraSec.id", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", "NASA Letter of Recognition", "KOMDIGI-CSIRT", "Nokia CVD Hall of Fame", ...memberNames],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://spectrasec.id/#core-members",
+      name: "Core Members SpectraSec.id",
+      itemListElement: members.map((member, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://spectrasec.id/#${slug(member.name)}`,
+        item: {
+          "@type": "Person",
+          name: member.name,
+          roleName: member.role,
+          description: member.summary,
+          award: member.achievements,
+          knowsAbout: member.tags,
+          image: member.image ? `https://spectrasec.id${member.image}` : undefined,
+          sameAs: member.links.map((link) => link[1]),
+        },
+      })),
     },
   ],
 };
@@ -352,6 +383,9 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
                   </div>
                   <p class="member-summary">{member.summary}</p>
                   <div class="member-tags">{member.tags.map((tag) => <span>{tag}</span>)}</div>
+                  <div class="member-achievements" aria-label={`Pencapaian ${member.name}`}>
+                    {member.achievements.map((achievement) => <span>{achievement}</span>)}
+                  </div>
                   <div class="member-links">
                     {member.links.map(([label, href]) => <a class="magnetic" href={href} target="_blank" rel="noreferrer">{label} ↗</a>)}
                   </div>
@@ -483,9 +517,9 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
           .forEach((el) => {
             let frame = 0;
             const strong = el.matches(".btn-primary, .btn-secondary, .header-cta, .desktop-nav a, .member-links a, .footer-links a, .instructor-copy a");
-            const strength = strong ? 0.12 : 0.035;
+            const strength = strong ? 0.12 : 0.026;
 
-            el.addEventListener("mousemove", (event) => {
+            const applyPointer = (event) => {
               const pointer = event;
               window.cancelAnimationFrame(frame);
               frame = window.requestAnimationFrame(() => {
@@ -494,20 +528,34 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
                 const y = (pointer.clientY - (rect.top + rect.height / 2)) * strength;
                 const glowX = ((pointer.clientX - rect.left) / rect.width) * 100;
                 const glowY = ((pointer.clientY - rect.top) / rect.height) * 100;
+                const tiltX = (50 - glowY) * (strong ? 0 : 0.07);
+                const tiltY = (glowX - 50) * (strong ? 0 : 0.055);
                 el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
                 el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
                 el.style.setProperty("--glow-x", `${glowX.toFixed(2)}%`);
                 el.style.setProperty("--glow-y", `${glowY.toFixed(2)}%`);
+                el.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+                el.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
               });
-            });
+            };
 
-            el.addEventListener("mouseleave", () => {
+            el.addEventListener("pointerenter", (event) => {
+              el.classList.add("is-hovering");
+              applyPointer(event);
+            }, { passive: true });
+
+            el.addEventListener("pointermove", applyPointer, { passive: true });
+
+            el.addEventListener("pointerleave", () => {
               window.cancelAnimationFrame(frame);
+              el.classList.remove("is-hovering");
               el.style.setProperty("--hover-x", "0px");
               el.style.setProperty("--hover-y", "0px");
               el.style.setProperty("--glow-x", "50%");
               el.style.setProperty("--glow-y", "35%");
-            });
+              el.style.setProperty("--tilt-x", "0deg");
+              el.style.setProperty("--tilt-y", "0deg");
+            }, { passive: true });
           });
       }
     </script>
