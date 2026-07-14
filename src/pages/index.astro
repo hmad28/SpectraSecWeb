@@ -44,10 +44,10 @@ const insights = [
 ];
 
 const proofPoints = [
-  ["NASA VDP", "Responsible disclosure lintas anggota"],
-  ["KOMDIGI", "Hunter aktif di ekosistem pemerintah"],
-  ["GLOBAL HoF", "Kontribusi pada platform luar negeri"],
-  ["FULLSTACK", "Riset keamanan + engineering produk"],
+  { title: "NASA VDP", desc: "Responsible disclosure lintas anggota.", meta: "01" },
+  { title: "KOMDIGI", desc: "Aktif di ekosistem pengamanan sektor publik.", meta: "02" },
+  { title: "GLOBAL HoF", desc: "Kontribusi pada platform luar negeri.", meta: "03" },
+  { title: "FULLSTACK", desc: "Riset keamanan, engineering, dan produk.", meta: "04" },
 ];
 
 const members = [
@@ -310,13 +310,18 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         </div>
       </section>
 
-      <section class="proof-rail" aria-label="SpectraSec proof points">
-        {proofPoints.map(([label, text]) => (
-          <article>
-            <strong>{label}</strong>
-            <span>{text}</span>
-          </article>
-        ))}
+      <section class="proof-section full-bleed-section" aria-label="SpectraSec proof points">
+        <div class="container wide-container">
+          <div class="proof-grid">
+            {proofPoints.map((point) => (
+              <article class="proof-card">
+                <span class="proof-meta">{point.meta}</span>
+                <strong>{point.title}</strong>
+                <p>{point.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section id="tentang" class="section-pad about-section full-bleed-section">
