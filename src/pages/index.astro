@@ -194,6 +194,31 @@ const members = [
 const slug = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const memberNames = members.map((member) => member.name);
 const memberKeywords = members.flatMap((member) => [member.role, ...member.tags, ...member.achievements]);
+const seoKeywords = [
+  "SpectraSec",
+  "SpectraSec.xyz",
+  "komunitas cyber security Indonesia",
+  "komunitas cybersecurity Indonesia",
+  "ethical hacking Indonesia",
+  "ethical hacking community",
+  "bug bounty Indonesia",
+  "bug hunting Indonesia",
+  "web security Indonesia",
+  "responsible disclosure Indonesia",
+  "OSINT Indonesia",
+  "penetration testing Indonesia",
+  "CTF Indonesia",
+  "cloud security",
+  "devops security",
+  "NASA VDP",
+  "KOMDIGI-CSIRT",
+  "Nokia CVD Hall of Fame",
+  "ethical hacker Indonesia",
+  "security researcher Indonesia",
+  "community security researcher",
+  ...memberNames,
+  ...memberKeywords,
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -225,7 +250,7 @@ const structuredData = {
       name: siteName,
       publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "id-ID",
-      keywords: ["SpectraSec", "SpectraSec.xyz", "komunitas cyber security Indonesia", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", "NASA Letter of Recognition", "KOMDIGI-CSIRT", "Nokia CVD Hall of Fame", ...memberNames],
+      keywords: seoKeywords,
     },
     {
       "@type": "ItemList",
@@ -265,7 +290,7 @@ const description = "SpectraSec.xyz adalah komunitas cyber security Indonesia un
     <meta name="author" content="SpectraSec" />
     <meta name="application-name" content="SpectraSec" />
     <meta name="theme-color" content="#120b24" />
-    <meta name="keywords" content={`SpectraSec, SpectraSec.xyz, komunitas cyber security Indonesia, komunitas cybersecurity Indonesia, ethical hacking Indonesia, bug hunting Indonesia, web security, OSINT, responsible disclosure, ${memberNames.join(", ")}, ${memberKeywords.join(", ")}`} />
+    <meta name="keywords" content={seoKeywords.join(", ")} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href={siteUrl} />
     <meta property="og:type" content="website" />
@@ -608,6 +633,8 @@ const description = "SpectraSec.xyz adalah komunitas cyber security Indonesia un
     </script>
   </body>
 </html>
+
+
 
 
 
