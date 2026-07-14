@@ -43,6 +43,13 @@ const insights = [
   },
 ];
 
+const proofPoints = [
+  ["NASA VDP", "Responsible disclosure lintas anggota"],
+  ["KOMDIGI", "Hunter aktif di ekosistem pemerintah"],
+  ["GLOBAL HoF", "Kontribusi pada platform luar negeri"],
+  ["FULLSTACK", "Riset keamanan + engineering produk"],
+];
+
 const members = [
   {
     name: "Musa Hamonangan Lubis",
@@ -288,9 +295,9 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         <div class="hero-shade"></div>
         <div class="hero-grid-bg"></div>
         <div class="hero-content">
-          <p class="hero-kicker"><span class="status-dot"></span>SPECTRASEC.ID CYBER SECURITY COMMUNITY</p>
-          <h1 id="hero-heading">SpectraSec.id<br /><span>Belajar keamanan cyber.</span></h1>
-          <p class="hero-copy">Ruang belajar dan media edukasi cybersecurity untuk talenta Indonesia: fundamental yang kuat, diskusi yang terbuka, dan praktik ethical hacking yang legal.</p>
+          <p class="hero-kicker"><span class="status-dot"></span>ETHICAL HACKING · VDP · BUG BOUNTY</p>
+          <h1 id="hero-heading">SpectraSec.id<br /><span>Cyber research collective.</span></h1>
+          <p class="hero-copy">Ruang belajar, riset, dan publikasi keamanan siber untuk talenta Indonesia yang bergerak di jalur legal: dari fundamental sampai responsible disclosure.</p>
           <div class="hero-actions">
             <a class="btn-primary magnetic" href={telegramUrl} target="_blank" rel="noreferrer">Gabung Komunitas <span>→</span></a>
             <a class="btn-secondary magnetic" href="#materi">Pelajari Materi</a>
@@ -303,12 +310,21 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         </div>
       </section>
 
-      <section id="tentang" class="section-pad about-section">
-        <div class="container">
+      <section class="proof-rail" aria-label="SpectraSec proof points">
+        {proofPoints.map(([label, text]) => (
+          <article>
+            <strong>{label}</strong>
+            <span>{text}</span>
+          </article>
+        ))}
+      </section>
+
+      <section id="tentang" class="section-pad about-section full-bleed-section">
+        <div class="container wide-container">
           <div class="section-title reveal">
             <div>
               <p class="eyebrow"><span></span>Tentang SpectraSec</p>
-              <h2>Fondasi kuat sebelum eksploitasi.</h2>
+              <h2>Disiplin teknis sebelum eksploitasi.</h2>
             </div>
             <p>SpectraSec.id membedah konsep keamanan siber menjadi materi yang terarah, relevan, dan aman dipraktikkan. Fokusnya jelas: belajar dalam scope legal, memahami dampak, lalu melaporkan dengan etika.</p>
           </div>
@@ -335,12 +351,12 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         </div>
       </section>
 
-      <section id="materi" class="section-pad insights-section">
-        <div class="container">
+      <section id="materi" class="section-pad insights-section full-bleed-section">
+        <div class="container wide-container">
           <div class="section-title reveal">
             <div>
               <p class="eyebrow"><span></span>Latest Insights</p>
-              <h2>Baca. Pahami. Uji secara etis.</h2>
+              <h2>Materi ringkas, arah praktik jelas.</h2>
             </div>
             <p>Materi ringkas dari kanal edukasi SpectraSec untuk membangun dasar teknis sebelum masuk ke praktik security research.</p>
           </div>
@@ -357,12 +373,12 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         </div>
       </section>
 
-      <section id="tim" class="section-pad team-section">
-        <div class="container">
+      <section id="tim" class="section-pad team-section full-bleed-section">
+        <div class="container wide-container">
           <div class="section-title reveal">
             <div>
               <p class="eyebrow"><span></span>Core Members</p>
-              <h2>Operator di balik SpectraSec.</h2>
+              <h2>Core team dengan rekam jejak riset.</h2>
             </div>
             <p>Anggota inti yang menggerakkan riset, materi, diskusi, dan praktik responsible disclosure di lingkungan SpectraSec.</p>
           </div>
@@ -400,8 +416,8 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
         </div>
       </section>
 
-      <section id="instruktur" class="section-pad instructor-section">
-        <div class="container instructor-grid">
+      <section id="instruktur" class="section-pad instructor-section full-bleed-section">
+        <div class="container wide-container instructor-grid">
           <div class="instructor-visual magnetic">
             <img src="/images/security-research-desk.webp" alt="Meja riset keamanan dengan visualisasi jaringan dan catatan threat model" width="1200" height="800" loading="lazy" decoding="async" />
             <div class="instructor-scan"></div>
