@@ -331,14 +331,14 @@ export default function Home() {
         <div className="container">
           <SectionTitle label="Tentang SpectraSec" title="Fondasi kuat sebelum eksploitasi." copy="SpectraSec.id membedah konsep keamanan siber menjadi materi yang terarah, relevan, dan aman dipraktikkan. Fokusnya jelas: belajar dalam scope legal, memahami dampak, lalu melaporkan dengan etika." />
           <div className="values-grid">
-            <motion.article className="value-panel" {...reveal}>
+            <motion.article className="value-panel" transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} {...reveal}>
               <span className="value-index">01</span>
               <div className="icon-box"><Zap size={22} /></div>
               <h3>Edukasi Terarah</h3>
               <p>Mulai dari fundamental Linux dan jaringan, berlanjut ke web security, vulnerability research, dan responsible disclosure.</p>
               <ul><li><CheckCircle2 size={15} /> Konsep sebelum tools</li><li><CheckCircle2 size={15} /> Materi dasar hingga advanced</li></ul>
             </motion.article>
-            <motion.article className="value-panel" {...reveal} transition={{ ...reveal.transition, delay: 0.1 }}>
+            <motion.article className="value-panel" transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} {...reveal} transition={{ ...reveal.transition, delay: 0.1 }}>
               <span className="value-index">02</span>
               <div className="icon-box cyan"><Users size={22} /></div>
               <h3>Sharing Community</h3>
@@ -360,7 +360,7 @@ export default function Home() {
             {insights.map((item, index) => {
               const Icon = item.icon;
               return (
-                <motion.button key={item.title} className={`insight-card ${item.className}`} onClick={() => setActiveInsight(item)} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
+                <motion.button key={item.title} className={`insight-card ${item.className}`} transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} onClick={() => setActiveInsight(item)} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
                   <span className="card-scanline" aria-hidden="true" />
                   <div className="insight-overlay" />
                   <div className="insight-top"><span>{item.number} / {item.category}</span><span className="insight-icon"><Icon size={20} /></span></div>
@@ -377,7 +377,7 @@ export default function Home() {
           <SectionTitle label="Core Members" title="Operator di balik SpectraSec." copy="Anggota inti yang menggerakkan riset, materi, diskusi, dan praktik responsible disclosure di lingkungan SpectraSec." />
           <div className="team-grid">
             {members.map((member, index) => (
-              <motion.article id={member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")} className={`member-card ${index === 0 ? "member-featured" : ""}`} key={member.name} {...reveal} transition={{ ...reveal.transition, delay: (index % 3) * 0.06 }}>
+              <motion.article id={member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")} className={`member-card ${index === 0 ? "member-featured" : ""}`} transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} key={member.name} {...reveal} transition={{ ...reveal.transition, delay: (index % 3) * 0.06 }}>
                 <span className="card-scanline" aria-hidden="true" />
                 <div className="member-portrait">
                   {member.image ? (
@@ -408,12 +408,12 @@ export default function Home() {
 
       <section id="instruktur" className="section-pad instructor-section">
         <div className="container instructor-grid">
-          <motion.div className="instructor-visual" {...reveal}>
+          <motion.div className="instructor-visual" transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} {...reveal}>
             <Image src="/images/security-research-desk.webp" alt="Meja riset keamanan dengan visualisasi jaringan dan catatan threat model" fill sizes="(max-width: 768px) 100vw, 48vw" />
             <div className="instructor-scan" />
             <div className="profile-stamp"><span>SS</span><small>OFFICIAL<br />INSTRUCTOR</small></div>
           </motion.div>
-          <motion.div className="instructor-copy" {...reveal}>
+          <motion.div className="instructor-copy" transformTemplate={(_transform, generated) => `${generated} translate3d(var(--hover-x, 0px), var(--hover-y, 0px), 0)`} {...reveal}>
             <p className="eyebrow"><span />Official Instructor</p>
             <h2>Belajar langsung dari praktisi yang memahami lapangan.</h2>
             <p className="handle">@ouashxy <ShieldCheck size={18} /></p>
