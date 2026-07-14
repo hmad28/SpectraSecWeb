@@ -82,19 +82,19 @@ type Member = {
 const members: Member[] = [
   {
     name: "Musa Hamonangan Lubis", initials: "MH", role: "Instruktur · Security Researcher",
-    summary: "Instruktur SpectraSec dan ethical hacker peringkat #1 KOMDIGI-CSIRT dengan fokus web application security serta responsible disclosure.",
+    summary: "Instruktur SpectraSec dan ethical hacker peringkat #1 KOMDIGI-CSIRT. Fokus pada web application security dan responsible disclosure.",
     tags: ["KOMDIGI #1", "Web Security"], image: "/members/musa.webp", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
     links: [{ label: "Instagram", href: "https://www.instagram.com/p/DajTmMsgdiy/" }, { label: "LinkedIn", href: "https://www.linkedin.com/in/musa-hamonangan-lubis-a719b9282" }, { label: "KOMDIGI", href: "https://csirt.komdigi.go.id/hunter/musa_hamonangan_lubis" }],
   },
   {
     name: "Rakha Hayya Ilhamsyah", initials: "RH", role: "Bug Hunter · Network Engineer",
-    summary: "Pelajar dan security researcher yang memperoleh rekognisi NASA bersama Balqis setelah melaporkan kerentanan secara bertanggung jawab.",
+    summary: "Pelajar dan security researcher yang memperoleh rekognisi NASA bersama Balqis melalui pelaporan kerentanan yang bertanggung jawab.",
     tags: ["NASA Recognition", "Pentesting"], image: "/members/rakha-balqis.webp", imagePosition: "left center", credit: "Foto: RRI / SMK Taruna Bhakti",
     links: [{ label: "LinkedIn", href: "https://id.linkedin.com/in/rakha-hayya-ilhamsyah-840252378" }, { label: "Instagram", href: "https://www.instagram.com/rakha.hayya/" }],
   },
   {
     name: "Radit Restu Juniarko", initials: "RR", role: "Network Engineer · Junior Pentester",
-    summary: "Praktisi jaringan, mahasiswa Teknik Multimedia dan Jaringan, serta pembelajar aktif di jalur bug bounty dan keamanan siber.",
+    summary: "Praktisi jaringan dan mahasiswa Teknik Multimedia dan Jaringan yang aktif mendalami bug bounty, routing, dan keamanan siber.",
     tags: ["MTCNA", "Network Security"], image: "/members/radit.jpg", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
     links: [{ label: "Instagram", href: "https://www.instagram.com/p/Dak25LCE5Wb/" }, { label: "LinkedIn", href: "https://www.linkedin.com/in/radit-restu-juniarko-526b94301/" }],
   },
@@ -106,30 +106,30 @@ const members: Member[] = [
   },
   {
     name: "Ferry Farhan", initials: "FF", role: "Cloud & Security Enthusiast",
-    summary: "Talenta lintas disiplin dengan pengalaman cloud engineering dan rekam kontribusi responsible disclosure pada institusi internasional.",
+    summary: "Talenta lintas disiplin dengan fokus cloud engineering dan kontribusi responsible disclosure pada institusi internasional.",
     tags: ["Cloud", "Responsible Disclosure"], links: [{ label: "LinkedIn", href: "https://id.linkedin.com/in/ferryfarhan/en" }, { label: "Hall of Fame", href: "https://www.surf.nl/en/hall-of-fame-0" }],
   },
   {
     name: "Malik Ibrahim", initials: "MI", role: "Bug Hunter · Security Researcher",
-    summary: "Kontributor KOMDIGI-CSIRT dengan alias likkk_39, aktif melaporkan kerentanan pada sistem pemerintah melalui jalur yang legal.",
+    summary: "Kontributor KOMDIGI-CSIRT dengan alias likkk_39. Aktif melaporkan kerentanan sistem pemerintah melalui jalur legal.",
     tags: ["KOMDIGI #4", "Bug Hunting"], image: "/members/malik.webp", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
     links: [{ label: "Instagram", href: "https://www.instagram.com/p/Dao-Rl9xYS3/" }, { label: "KOMDIGI", href: "https://csirt.komdigi.go.id/hunter/likkk_39" }],
   },
   {
     name: "Hammad Matt", initials: "HM", role: "Fullstack Developer · Security Researcher",
-    summary: "Builder produk fullstack dan security automation, termasuk BLH Hunter, dengan fokus pada sistem bisnis dan responsible disclosure.",
+    summary: "Builder produk fullstack dan security automation, termasuk BLH Hunter. Fokus pada sistem bisnis dan responsible disclosure.",
     tags: ["Fullstack", "Security Automation"], image: "/members/hammad-instagram.webp", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
     links: [{ label: "Instagram", href: "https://www.instagram.com/p/DZPbw4FkkpH/" }, { label: "Website", href: "https://www.hammad.biz.id/" }, { label: "LinkedIn", href: "https://id.linkedin.com/in/hmatt28" }],
   },
   {
     name: "Firoos Ghathfaan Ramadhan", initials: "FG", role: "Young Security Researcher",
-    summary: "Peneliti muda dari Subang yang memperoleh rekognisi NASA atas responsible disclosure dan mendapat dukungan pengembangan riset dari BRIN.",
+    summary: "Peneliti muda dari Subang dengan rekognisi NASA atas responsible disclosure dan dukungan pengembangan riset dari BRIN.",
     tags: ["NASA Recognition", "OSINT"], image: "/members/firoos.jpeg", imagePosition: "75% center", credit: "Foto: Detik / dokumentasi publik",
     links: [{ label: "Profil Publik", href: "https://www.detik.com/edu/edutainment/d-8477411/brin-bakal-biayai-riset-firoos-anak-smp-yang-temukan-celah-keamanan-nasa/amp" }],
   },
   {
     name: "Balqis Amanda", initials: "BA", role: "Security Researcher · Network Student",
-    summary: "Pelajar SMK Taruna Bhakti dan rekan riset Rakha yang memperoleh letter of recognition setelah melaporkan temuan kepada NASA.",
+    summary: "Pelajar SMK Taruna Bhakti dan rekan riset Rakha yang memperoleh letter of recognition setelah melaporkan temuan ke NASA.",
     tags: ["NASA Recognition", "Networking"], image: "/members/rakha-balqis.webp", imagePosition: "right center", credit: "Foto: RRI / SMK Taruna Bhakti",
     links: [{ label: "Liputan RRI", href: "https://rri.co.id/en/technology/2401578/indonesian-high-school-students-recognized-by-nasa-for-finding-its-security-gaps" }],
   },
@@ -259,7 +259,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <p className="hero-kicker"><Radar size={15} /> SPECTRASEC.ID CYBER SECURITY COMMUNITY</p>
             <h1 id="hero-heading">SpectraSec.id<br /><span>Belajar keamanan cyber.</span></h1>
-            <p className="hero-copy">Wadah eksplorasi, diskusi, dan edukasi fundamental cybersecurity untuk mencetak talenta digital Indonesia yang kompeten dan beretika.</p>
+            <p className="hero-copy">Ruang belajar dan media edukasi cybersecurity untuk talenta Indonesia: fundamental yang kuat, diskusi yang terbuka, dan praktik ethical hacking yang legal.</p>
             <div className="hero-actions">
               <Button href={telegramUrl} target="_blank" rel="noreferrer">
                 <MessageCircle size={18} /> Gabung Komunitas <ArrowRight size={17} />
@@ -277,7 +277,7 @@ export default function Home() {
 
       <section id="tentang" className="section-pad about-section">
         <div className="container">
-          <SectionTitle label="Tentang SpectraSec" title="Fondasi kuat sebelum eksploitasi." copy="SpectraSec.id lahir sebagai media edukasi dan ruang belajar bersama. Kami membedah konsep rumit menjadi materi yang terarah, relevan, dan bisa dipraktikkan secara legal." />
+          <SectionTitle label="Tentang SpectraSec" title="Fondasi kuat sebelum eksploitasi." copy="SpectraSec.id membedah konsep keamanan siber menjadi materi yang terarah, relevan, dan aman dipraktikkan. Fokusnya jelas: belajar dalam scope legal, memahami dampak, lalu melaporkan dengan etika." />
           <div className="values-grid">
             <motion.article className="value-panel" {...reveal}>
               <span className="value-index">01</span>
@@ -303,12 +303,13 @@ export default function Home() {
 
       <section id="materi" className="section-pad insights-section">
         <div className="container">
-          <SectionTitle label="Latest Insights" title="Baca. Pahami. Uji secara etis." copy="Insight pilihan dari kanal edukasi SpectraSec. Klik setiap materi untuk membaca ringkasan konsep dan arah belajarnya." />
+          <SectionTitle label="Latest Insights" title="Baca. Pahami. Uji secara etis." copy="Materi ringkas dari kanal edukasi SpectraSec untuk membangun dasar teknis sebelum masuk ke praktik security research." />
           <div className="insights-grid">
             {insights.map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.button key={item.title} className={`insight-card ${item.className}`} onClick={() => setActiveInsight(item)} {...reveal} transition={{ ...reveal.transition, delay: index * 0.06 }}>
+                  <span className="card-scanline" aria-hidden="true" />
                   <div className="insight-overlay" />
                   <div className="insight-top"><span>{item.number} / {item.category}</span><span className="insight-icon"><Icon size={20} /></span></div>
                   <div className="insight-bottom"><h3>{item.title}</h3><p>{item.excerpt}</p><span className="read-link">BACA RINGKASAN <ChevronRight size={15} /></span></div>
@@ -321,10 +322,11 @@ export default function Home() {
 
       <section id="tim" className="section-pad team-section">
         <div className="container">
-          <SectionTitle label="Core Members" title="Orang-orang di balik signal." copy="Bukan sekadar angka komunitas. Inilah anggota inti yang belajar, membangun, berbagi temuan, dan mendorong praktik keamanan siber yang bertanggung jawab di SpectraSec." />
+          <SectionTitle label="Core Members" title="Operator di balik SpectraSec." copy="Anggota inti yang menggerakkan riset, materi, diskusi, dan praktik responsible disclosure di lingkungan SpectraSec." />
           <div className="team-grid">
             {members.map((member, index) => (
               <motion.article id={member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")} className={`member-card ${index === 0 ? "member-featured" : ""}`} key={member.name} {...reveal} transition={{ ...reveal.transition, delay: (index % 3) * 0.06 }}>
+                <span className="card-scanline" aria-hidden="true" />
                 <div className="member-portrait">
                   {member.image ? (
                     <Image src={member.image} alt={`Foto ${member.name}`} fill sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw" style={{ objectPosition: member.imagePosition }} />
@@ -335,8 +337,10 @@ export default function Home() {
                   {member.credit && <small className="photo-credit">{member.credit}</small>}
                 </div>
                 <div className="member-body">
-                  <p className="member-role">{member.role}</p>
-                  <h3>{member.name}</h3>
+                  <div className="member-heading">
+                    <p className="member-role">{member.role}</p>
+                    <h3>{member.name}</h3>
+                  </div>
                   <p className="member-summary">{member.summary}</p>
                   <div className="member-tags">{member.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   <div className="member-links">
