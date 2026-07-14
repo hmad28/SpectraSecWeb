@@ -95,13 +95,13 @@ const members: Member[] = [
   {
     name: "Radit Restu Juniarko", initials: "RR", role: "Network Engineer · Junior Pentester",
     summary: "Praktisi jaringan dan mahasiswa Teknik Multimedia dan Jaringan yang aktif mendalami bug bounty, routing, dan keamanan siber.",
-    tags: ["MTCNA", "Network Security"], image: "/members/radit.jpg", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
+    tags: ["MTCNA", "Network Security"], image: "/members/radit.webp", imagePosition: "center center", credit: "Foto: Instagram / sumber anggota",
     links: [{ label: "Instagram", href: "https://www.instagram.com/p/Dak25LCE5Wb/" }, { label: "LinkedIn", href: "https://www.linkedin.com/in/radit-restu-juniarko-526b94301/" }],
   },
   {
     name: "Muhammad Rizki Aulia", initials: "MR", role: "Security Researcher",
     summary: "Peneliti keamanan yang tercatat di Nokia Coordinated Vulnerability Disclosure Hall of Fame edisi April 2026.",
-    tags: ["Nokia Hall of Fame", "CVD"], image: "/members/rizki.jpg", imagePosition: "center center", credit: "Foto profil: LinkedIn",
+    tags: ["Nokia Hall of Fame", "CVD"], image: "/members/rizki.webp", imagePosition: "center center", credit: "Foto profil: LinkedIn",
     links: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-rizki-aulia-ab921b329/" }],
   },
   {
@@ -124,7 +124,7 @@ const members: Member[] = [
   {
     name: "Firoos Ghathfaan Ramadhan", initials: "FG", role: "Young Security Researcher",
     summary: "Peneliti muda dari Subang dengan rekognisi NASA atas responsible disclosure dan dukungan pengembangan riset dari BRIN.",
-    tags: ["NASA Recognition", "OSINT"], image: "/members/firoos.jpeg", imagePosition: "75% center", credit: "Foto: Detik / dokumentasi publik",
+    tags: ["NASA Recognition", "OSINT"], image: "/members/firoos.webp", imagePosition: "75% center", credit: "Foto: Detik / dokumentasi publik",
     links: [{ label: "Profil Publik", href: "https://www.detik.com/edu/edutainment/d-8477411/brin-bakal-biayai-riset-firoos-anak-smp-yang-temukan-celah-keamanan-nasa/amp" }],
   },
   {
@@ -145,7 +145,7 @@ const structuredData = {
       name: "SpectraSec.id",
       alternateName: ["SpectraSec", "SpectraSec Cyber Security Community"],
       url: "https://spectrasec.id",
-      logo: "https://spectrasec.id/images/spectrasec-hero.png",
+      logo: "https://spectrasec.id/images/spectrasec-hero.webp",
       sameAs: [instagramUrl, telegramUrl],
       description: "Komunitas belajar dan media edukasi keamanan cyber Indonesia dengan fokus ethical hacking, web security, bug hunting, OSINT, dan responsible disclosure.",
       member: members.map((member) => ({
@@ -252,7 +252,7 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-heading">
-        <Image src="/images/spectrasec-hero.png" alt="Security researcher memantau jaringan dari pusat operasi keamanan" fill priority sizes="100vw" className="hero-image" />
+        <Image src="/images/spectrasec-hero.webp" alt="Security researcher memantau jaringan dari pusat operasi keamanan" fill priority sizes="100vw" className="hero-image" />
         <div className="hero-shade" />
         <div className="hero-grid" />
         <div className="hero-content">
@@ -357,7 +357,7 @@ export default function Home() {
       <section id="instruktur" className="section-pad instructor-section">
         <div className="container instructor-grid">
           <motion.div className="instructor-visual" {...reveal}>
-            <Image src="/images/security-research-desk.png" alt="Meja riset keamanan dengan visualisasi jaringan dan catatan threat model" fill sizes="(max-width: 768px) 100vw, 48vw" />
+            <Image src="/images/security-research-desk.webp" alt="Meja riset keamanan dengan visualisasi jaringan dan catatan threat model" fill sizes="(max-width: 768px) 100vw, 48vw" />
             <div className="instructor-scan" />
             <div className="profile-stamp"><span>SS</span><small>OFFICIAL<br />INSTRUCTOR</small></div>
           </motion.div>

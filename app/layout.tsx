@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     siteName: "SpectraSec.id",
     title,
     description,
-    images: [{ url: "/images/spectrasec-hero.png", width: 1393, height: 891, alt: "SpectraSec.id cyber security community Indonesia" }],
+    images: [{ url: "/images/spectrasec-hero.webp", width: 1568, height: 1003, alt: "SpectraSec.id cyber security community Indonesia" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/images/spectrasec-hero.png"],
+    images: ["/images/spectrasec-hero.webp"],
   },
 };
 
