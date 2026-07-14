@@ -1,0 +1,515 @@
+---
+import "../styles/site.css";
+
+const telegramUrl = "https://t.me/+vvxMjHuYEOgxMWI1";
+const instagramUrl = "https://www.instagram.com/spectrasec.id/";
+
+const insights = [
+  {
+    number: "01",
+    category: "Web Defense",
+    title: "Mengenal Apa Itu WAF",
+    excerpt: "Lapisan penjaga aplikasi web yang membaca, menyaring, dan memblokir request berbahaya sebelum mencapai server.",
+    body: "Web Application Firewall memonitor lalu lintas HTTP/HTTPS berdasarkan rules dan pola serangan. Materi ini membahas posisi WAF dalam arsitektur web, perbedaannya dengan firewall jaringan, serta alasan WAF tetap harus dipadukan dengan secure coding.",
+    icon: "WAF",
+    className: "insight-photo",
+  },
+  {
+    number: "02",
+    category: "Fundamental",
+    title: "Basic Command di Linux",
+    excerpt: "Navigasi file, permission, process, dan command penting untuk membangun workflow security yang solid.",
+    body: "Linux adalah lingkungan utama banyak server dan tooling security. Mulai dari pwd, ls, cd, cat, grep, chmod, ps, sampai piping, materi ini membantu pemula memahami sistem sebelum menggunakan tool yang lebih kompleks.",
+    icon: "CLI",
+    className: "insight-terminal",
+  },
+  {
+    number: "03",
+    category: "Web Security",
+    title: "Kenalan Sama SQL Injection",
+    excerpt: "Pahami bagaimana input yang tidak tervalidasi dapat mengubah query dan membuka akses yang tidak semestinya.",
+    body: "SQL Injection terjadi ketika input pengguna masuk ke query tanpa penanganan yang aman. Pelajari konsep payload secara legal di lab, dampaknya terhadap data, dan mitigasi utama melalui parameterized queries serta validasi input.",
+    icon: "SQL",
+    className: "insight-code",
+  },
+  {
+    number: "04",
+    category: "Cyber Culture",
+    title: "Jenis Hacker yang Perlu Kamu Ketahui",
+    excerpt: "Kenali perbedaan white hat, black hat, grey hat, dan mengapa izin serta scope selalu menjadi batas utama.",
+    body: "Istilah hacker sering disederhanakan. Pembahasan ini memetakan motivasi dan cara kerja white hat, grey hat, black hat, hacktivist, serta security researcher dengan fokus pada izin, dampak, dan tanggung jawab hukum.",
+    icon: "ID",
+    className: "insight-grid",
+  },
+];
+
+const members = [
+  {
+    name: "Musa Hamonangan Lubis",
+    initials: "MH",
+    role: "Instruktur / Security Researcher",
+    summary: "Instruktur SpectraSec dan ethical hacker peringkat #1 KOMDIGI-CSIRT. Fokus pada web application security dan responsible disclosure.",
+    tags: ["KOMDIGI #1", "Web Security"],
+    image: "/members/musa.webp",
+    position: "center center",
+    credit: "Foto: Instagram / sumber anggota",
+    links: [
+      ["Instagram", "https://www.instagram.com/p/DajTmMsgdiy/"],
+      ["LinkedIn", "https://www.linkedin.com/in/musa-hamonangan-lubis-a719b9282"],
+      ["KOMDIGI", "https://csirt.komdigi.go.id/hunter/musa_hamonangan_lubis"],
+    ],
+  },
+  {
+    name: "Rakha Hayya Ilhamsyah",
+    initials: "RH",
+    role: "Bug Hunter / Network Engineer",
+    summary: "Pelajar dan security researcher yang memperoleh rekognisi NASA bersama Balqis melalui pelaporan kerentanan yang bertanggung jawab.",
+    tags: ["NASA Recognition", "Pentesting"],
+    image: "/members/rakha-balqis.webp",
+    position: "left center",
+    credit: "Foto: RRI / SMK Taruna Bhakti",
+    links: [
+      ["LinkedIn", "https://id.linkedin.com/in/rakha-hayya-ilhamsyah-840252378"],
+      ["Instagram", "https://www.instagram.com/rakha.hayya/"],
+    ],
+  },
+  {
+    name: "Radit Restu Juniarko",
+    initials: "RR",
+    role: "Network Engineer / Junior Pentester",
+    summary: "Praktisi jaringan dan mahasiswa Teknik Multimedia dan Jaringan yang aktif mendalami bug bounty, routing, dan keamanan siber.",
+    tags: ["MTCNA", "Network Security"],
+    image: "/members/radit.webp",
+    position: "center center",
+    credit: "Foto: Instagram / sumber anggota",
+    links: [
+      ["Instagram", "https://www.instagram.com/p/Dak25LCE5Wb/"],
+      ["LinkedIn", "https://www.linkedin.com/in/radit-restu-juniarko-526b94301/"],
+    ],
+  },
+  {
+    name: "Muhammad Rizki Aulia",
+    initials: "MR",
+    role: "Security Researcher",
+    summary: "Peneliti keamanan yang tercatat di Nokia Coordinated Vulnerability Disclosure Hall of Fame edisi April 2026.",
+    tags: ["Nokia Hall of Fame", "CVD"],
+    image: "/members/rizki.webp",
+    position: "center center",
+    credit: "Foto profil: LinkedIn",
+    links: [["LinkedIn", "https://www.linkedin.com/in/muhammad-rizki-aulia-ab921b329/"]],
+  },
+  {
+    name: "Ferry Farhan",
+    initials: "FF",
+    role: "Cloud & Security Enthusiast",
+    summary: "Talenta lintas disiplin dengan fokus cloud engineering dan kontribusi responsible disclosure pada institusi internasional.",
+    tags: ["Cloud", "Responsible Disclosure"],
+    links: [
+      ["LinkedIn", "https://id.linkedin.com/in/ferryfarhan/en"],
+      ["Hall of Fame", "https://www.surf.nl/en/hall-of-fame-0"],
+    ],
+  },
+  {
+    name: "Malik Ibrahim",
+    initials: "MI",
+    role: "Bug Hunter / Security Researcher",
+    summary: "Kontributor KOMDIGI-CSIRT dengan alias likkk_39. Aktif melaporkan kerentanan sistem pemerintah melalui jalur legal.",
+    tags: ["KOMDIGI #4", "Bug Hunting"],
+    image: "/members/malik.webp",
+    position: "center center",
+    credit: "Foto: file anggota",
+    links: [
+      ["Instagram", "https://www.instagram.com/p/Dao-Rl9xYS3/"],
+      ["KOMDIGI", "https://csirt.komdigi.go.id/hunter/likkk_39"],
+    ],
+  },
+  {
+    name: "Hammad Matt",
+    initials: "HM",
+    role: "Fullstack Developer / Security Researcher",
+    summary: "Builder produk fullstack dan security automation, termasuk BLH Hunter. Fokus pada sistem bisnis dan responsible disclosure.",
+    tags: ["Fullstack", "Security Automation"],
+    image: "/members/hammad-instagram.webp",
+    position: "center center",
+    credit: "Foto: Instagram / sumber anggota",
+    links: [
+      ["Instagram", "https://www.instagram.com/p/DZPbw4FkkpH/"],
+      ["Website", "https://www.hammad.biz.id/"],
+      ["LinkedIn", "https://id.linkedin.com/in/hmatt28"],
+    ],
+  },
+  {
+    name: "Firoos Ghathfaan Ramadhan",
+    initials: "FG",
+    role: "Young Security Researcher",
+    summary: "Peneliti muda dari Subang dengan rekognisi NASA atas responsible disclosure dan dukungan pengembangan riset dari BRIN.",
+    tags: ["NASA Recognition", "OSINT"],
+    image: "/members/firoos.webp",
+    position: "75% center",
+    credit: "Foto: dokumentasi publik",
+    links: [["Profil Publik", "https://www.detik.com/edu/edutainment/d-8477411/brin-bakal-biayai-riset-firoos-anak-smp-yang-temukan-celah-keamanan-nasa/amp"]],
+  },
+  {
+    name: "Balqis Amanda",
+    initials: "BA",
+    role: "Security Researcher / Network Student",
+    summary: "Pelajar SMK Taruna Bhakti dan rekan riset Rakha yang memperoleh letter of recognition setelah melaporkan temuan ke NASA.",
+    tags: ["NASA Recognition", "Networking"],
+    image: "/members/rakha-balqis.webp",
+    position: "right center",
+    credit: "Foto: RRI / SMK Taruna Bhakti",
+    links: [["Liputan RRI", "https://rri.co.id/en/technology/2401578/indonesian-high-school-students-recognized-by-nasa-for-finding-its-security-gaps"]],
+  },
+];
+
+const slug = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const memberNames = members.map((member) => member.name);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://spectrasec.id/#organization",
+      name: "SpectraSec.id",
+      alternateName: ["SpectraSec", "SpectraSec Cyber Security Community"],
+      url: "https://spectrasec.id",
+      logo: "https://spectrasec.id/images/spectrasec-hero.webp",
+      sameAs: [instagramUrl, telegramUrl],
+      description: "Komunitas belajar dan media edukasi keamanan cyber Indonesia dengan fokus ethical hacking, web security, bug hunting, OSINT, dan responsible disclosure.",
+      member: members.map((member) => ({
+        "@type": "Person",
+        name: member.name,
+        roleName: member.role,
+        description: member.summary,
+        image: member.image ? `https://spectrasec.id${member.image}` : undefined,
+        sameAs: member.links.map((link) => link[1]),
+      })),
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://spectrasec.id/#website",
+      url: "https://spectrasec.id",
+      name: "SpectraSec.id",
+      publisher: { "@id": "https://spectrasec.id/#organization" },
+      inLanguage: "id-ID",
+      keywords: ["SpectraSec", "SpectraSec.id", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", ...memberNames],
+    },
+  ],
+};
+
+const title = "SpectraSec.id | Komunitas Cyber Security & Ethical Hacking Indonesia";
+const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indonesia untuk ethical hacking, web security, bug hunting, OSINT, Linux, dan responsible disclosure bersama core member SpectraSec.";
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={`SpectraSec, SpectraSec.id, komunitas cybersecurity Indonesia, ethical hacking Indonesia, bug hunting Indonesia, web security, OSINT, responsible disclosure, ${memberNames.join(", ")}`} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://spectrasec.id/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="SpectraSec.id" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://spectrasec.id/" />
+    <meta property="og:image" content="https://spectrasec.id/images/spectrasec-hero.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://spectrasec.id/images/spectrasec-hero.webp" />
+    <link rel="preload" as="image" href="/images/spectrasec-hero.webp" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="SpectraSec.id beranda">
+        <span class="signal-mark signal-mark-compact" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span>
+        <span>SPECTRASEC<span>.ID</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigasi utama">
+        <a href="#tentang">Tentang</a>
+        <a href="#materi">Insight</a>
+        <a href="#tim">Tim</a>
+        <a href="#instruktur">Instruktur</a>
+      </nav>
+      <a class="header-cta magnetic" href={telegramUrl} target="_blank" rel="noreferrer">Gabung Komunitas <span aria-hidden="true">↗</span></a>
+      <button class="menu-button" data-menu-button aria-label="Buka navigasi" aria-expanded="false"><span></span><span></span></button>
+      <nav class="mobile-nav" data-mobile-nav aria-label="Navigasi mobile" hidden>
+        <a href="#tentang">Tentang</a>
+        <a href="#materi">Insight</a>
+        <a href="#tim">Tim</a>
+        <a href="#instruktur">Instruktur</a>
+        <a href={telegramUrl} target="_blank" rel="noreferrer">Gabung Komunitas</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-heading">
+        <img class="hero-image" src="/images/spectrasec-hero.webp" alt="Security researcher memantau jaringan dari pusat operasi keamanan" width="1568" height="1003" loading="eager" decoding="async" />
+        <div class="hero-shade"></div>
+        <div class="hero-grid-bg"></div>
+        <div class="hero-content">
+          <p class="hero-kicker"><span class="status-dot"></span>SPECTRASEC.ID CYBER SECURITY COMMUNITY</p>
+          <h1 id="hero-heading">SpectraSec.id<br /><span>Belajar keamanan cyber.</span></h1>
+          <p class="hero-copy">Ruang belajar dan media edukasi cybersecurity untuk talenta Indonesia: fundamental yang kuat, diskusi yang terbuka, dan praktik ethical hacking yang legal.</p>
+          <div class="hero-actions">
+            <a class="btn-primary magnetic" href={telegramUrl} target="_blank" rel="noreferrer">Gabung Komunitas <span>→</span></a>
+            <a class="btn-secondary magnetic" href="#materi">Pelajari Materi</a>
+          </div>
+        </div>
+        <div class="hero-status" aria-label="Status komunitas">
+          <span><i></i>COMMUNITY ONLINE</span>
+          <span>BASED IN INDONESIA</span>
+          <span>ETHICAL BY DEFAULT</span>
+        </div>
+      </section>
+
+      <section id="tentang" class="section-pad about-section">
+        <div class="container">
+          <div class="section-title reveal">
+            <div>
+              <p class="eyebrow"><span></span>Tentang SpectraSec</p>
+              <h2>Fondasi kuat sebelum eksploitasi.</h2>
+            </div>
+            <p>SpectraSec.id membedah konsep keamanan siber menjadi materi yang terarah, relevan, dan aman dipraktikkan. Fokusnya jelas: belajar dalam scope legal, memahami dampak, lalu melaporkan dengan etika.</p>
+          </div>
+          <div class="values-grid">
+            <article class="value-panel magnetic">
+              <span class="value-index">01</span>
+              <div class="icon-box">ED</div>
+              <h3>Edukasi Terarah</h3>
+              <p>Mulai dari fundamental Linux dan jaringan, berlanjut ke web security, vulnerability research, dan responsible disclosure.</p>
+              <ul><li>Konsep sebelum tools</li><li>Materi dasar hingga advanced</li></ul>
+            </article>
+            <article class="value-panel magnetic">
+              <span class="value-index">02</span>
+              <div class="icon-box cyan">SC</div>
+              <h3>Sharing Community</h3>
+              <p>Ruang terbuka bagi pemula dan security researcher untuk bertanya, bertukar referensi, dan bertumbuh bersama.</p>
+              <ul><li>Diskusi tanpa gatekeeping</li><li>Etika sebagai standar</li></ul>
+            </article>
+            <div class="signal-panel">
+              <span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span>
+              <div class="signal-copy"><span>OUR SIGNAL</span><strong>EXPLORE<br />LEARN<br />SECURE</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="materi" class="section-pad insights-section">
+        <div class="container">
+          <div class="section-title reveal">
+            <div>
+              <p class="eyebrow"><span></span>Latest Insights</p>
+              <h2>Baca. Pahami. Uji secara etis.</h2>
+            </div>
+            <p>Materi ringkas dari kanal edukasi SpectraSec untuk membangun dasar teknis sebelum masuk ke praktik security research.</p>
+          </div>
+          <div class="insights-grid">
+            {insights.map((item) => (
+              <button class={`insight-card magnetic ${item.className}`} data-insight-title={item.title} data-insight-category={item.category} data-insight-body={item.body}>
+                <span class="card-scanline" aria-hidden="true"></span>
+                <div class="insight-overlay"></div>
+                <div class="insight-top"><span>{item.number} / {item.category}</span><span class="insight-icon">{item.icon}</span></div>
+                <div class="insight-bottom"><h3>{item.title}</h3><p>{item.excerpt}</p><span class="read-link">BACA RINGKASAN ›</span></div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="tim" class="section-pad team-section">
+        <div class="container">
+          <div class="section-title reveal">
+            <div>
+              <p class="eyebrow"><span></span>Core Members</p>
+              <h2>Operator di balik SpectraSec.</h2>
+            </div>
+            <p>Anggota inti yang menggerakkan riset, materi, diskusi, dan praktik responsible disclosure di lingkungan SpectraSec.</p>
+          </div>
+          <div class="team-grid">
+            {members.map((member, index) => (
+              <article id={slug(member.name)} class={`member-card magnetic ${index === 0 ? "member-featured" : ""}`}>
+                <span class="card-scanline" aria-hidden="true"></span>
+                <div class="member-portrait">
+                  {member.image ? (
+                    <img src={member.image} alt={`Foto ${member.name}`} style={`object-position:${member.position ?? "center center"}`} width="720" height="720" loading={index < 2 ? "eager" : "lazy"} decoding="async" />
+                  ) : (
+                    <div class="member-monogram"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><strong>{member.initials}</strong><span>PHOTO PENDING VERIFICATION</span></div>
+                  )}
+                  <span class="member-number">{String(index + 1).padStart(2, "0")}</span>
+                  {member.credit && <small class="photo-credit">{member.credit}</small>}
+                </div>
+                <div class="member-body">
+                  <div class="member-heading">
+                    <p class="member-role">{member.role}</p>
+                    <h3>{member.name}</h3>
+                  </div>
+                  <p class="member-summary">{member.summary}</p>
+                  <div class="member-tags">{member.tags.map((tag) => <span>{tag}</span>)}</div>
+                  <div class="member-links">
+                    {member.links.map(([label, href]) => <a class="magnetic" href={href} target="_blank" rel="noreferrer">{label} ↗</a>)}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p class="team-note">Profil memakai sumber profesional dan publik yang dapat dicocokkan. Foto yang belum terverifikasi ditandai dan tidak digantikan dengan wajah dari hasil pencarian homonim.</p>
+        </div>
+      </section>
+
+      <section id="instruktur" class="section-pad instructor-section">
+        <div class="container instructor-grid">
+          <div class="instructor-visual magnetic">
+            <img src="/images/security-research-desk.webp" alt="Meja riset keamanan dengan visualisasi jaringan dan catatan threat model" width="1200" height="800" loading="lazy" decoding="async" />
+            <div class="instructor-scan"></div>
+            <div class="profile-stamp"><span>SS</span><small>OFFICIAL<br />INSTRUCTOR</small></div>
+          </div>
+          <div class="instructor-copy">
+            <p class="eyebrow"><span></span>Official Instructor</p>
+            <h2>Belajar langsung dari praktisi yang memahami lapangan.</h2>
+            <p class="handle">@ouashxy</p>
+            <p>Instruktur resmi SpectraSec.id yang memandu komunitas memahami mindset security researcher: teliti saat mengamati, sistematis saat menguji, dan bertanggung jawab saat melaporkan.</p>
+            <div class="expertise">
+              <span>Ethical Hacking</span>
+              <span>Web Security</span>
+              <span>Vulnerability Research</span>
+            </div>
+            <a class="magnetic" href={instagramUrl} target="_blank" rel="noreferrer">Lihat aktivitas di Instagram ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-rings"></div>
+        <div class="container cta-inner">
+          <p class="eyebrow light"><span></span>Build Your Cyber Foundation</p>
+          <h2>Siap memperkuat<br />pertahanan digital?</h2>
+          <p>Masuk ke ruang belajar yang membahas cybersecurity dengan bahasa yang jelas, praktik yang terarah, dan batas etika yang tegas.</p>
+          <div class="hero-actions centered">
+            <a class="btn-primary magnetic" href={telegramUrl} target="_blank" rel="noreferrer">Gabung Komunitas</a>
+            <a class="btn-secondary magnetic" href={instagramUrl} target="_blank" rel="noreferrer">@spectrasec.id</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-main">
+        <div><a class="brand" href="#top"><span class="signal-mark signal-mark-compact" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></span><span>SPECTRASEC<span>.ID</span></span></a><p>Komunitas belajar dan media edukasi keamanan cyber Indonesia.</p></div>
+        <div class="footer-links"><span>NAVIGASI</span><a class="magnetic" href="#tentang">Tentang</a><a class="magnetic" href="#materi">Insight</a><a class="magnetic" href="#tim">Tim</a><a class="magnetic" href="#instruktur">Instruktur</a></div>
+        <div class="footer-links"><span>TERHUBUNG</span><a class="magnetic" href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a class="magnetic" href={telegramUrl} target="_blank" rel="noreferrer">Telegram ↗</a></div>
+      </div>
+      <div class="container footer-bottom"><p>© 2026 SpectraSec.id</p><p>Seluruh materi ditujukan untuk edukasi dan praktik ethical hacking yang legal.</p></div>
+    </footer>
+
+    <div class="modal-backdrop" data-modal hidden>
+      <article class="insight-modal" role="dialog" aria-modal="true" aria-label="Ringkasan insight">
+        <button class="modal-close" data-modal-close aria-label="Tutup ringkasan">×</button>
+        <p class="eyebrow"><span></span><span data-modal-category></span></p>
+        <h2 data-modal-title></h2>
+        <p data-modal-body></p>
+        <div class="modal-note"><span>Praktikkan hanya pada lab, sistem milik sendiri, atau target dengan izin dan scope yang jelas.</span></div>
+        <a href={instagramUrl} target="_blank" rel="noreferrer">Temukan materi lengkap ↗</a>
+      </article>
+    </div>
+
+    <script is:inline>
+      const header = document.querySelector("[data-header]");
+      const menuButton = document.querySelector("[data-menu-button]");
+      const mobileNav = document.querySelector("[data-mobile-nav]");
+      const modal = document.querySelector("[data-modal]");
+      const modalTitle = document.querySelector("[data-modal-title]");
+      const modalCategory = document.querySelector("[data-modal-category]");
+      const modalBody = document.querySelector("[data-modal-body]");
+
+      const updateHeader = () => {
+        const y = Math.max(0, window.scrollY);
+        header?.classList.toggle("is-scrolled", y > 24);
+        header?.classList.toggle("is-compact", y > 70);
+      };
+
+      let scrollFrame = 0;
+      window.addEventListener("scroll", () => {
+        if (scrollFrame) return;
+        scrollFrame = window.requestAnimationFrame(() => {
+          updateHeader();
+          scrollFrame = 0;
+        });
+      }, { passive: true });
+      updateHeader();
+
+      menuButton?.addEventListener("click", () => {
+        const next = mobileNav?.hasAttribute("hidden");
+        if (next) mobileNav?.removeAttribute("hidden");
+        else mobileNav?.setAttribute("hidden", "");
+        menuButton.setAttribute("aria-expanded", String(next));
+      });
+      mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+        mobileNav.setAttribute("hidden", "");
+        menuButton?.setAttribute("aria-expanded", "false");
+      }));
+
+      document.querySelectorAll("[data-insight-title]").forEach((card) => {
+        card.addEventListener("click", () => {
+          if (modalTitle) modalTitle.textContent = card.getAttribute("data-insight-title") || "";
+          if (modalCategory) modalCategory.textContent = card.getAttribute("data-insight-category") || "";
+          if (modalBody) modalBody.textContent = card.getAttribute("data-insight-body") || "";
+          modal?.removeAttribute("hidden");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      const closeModal = () => {
+        modal?.setAttribute("hidden", "");
+        document.body.style.overflow = "";
+      };
+      document.querySelector("[data-modal-close]")?.addEventListener("click", closeModal);
+      modal?.addEventListener("mousedown", (event) => {
+        if (event.target === modal) closeModal();
+      });
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal && !modal.hasAttribute("hidden")) closeModal();
+      });
+
+      if (!window.matchMedia("(hover: none)").matches) {
+        document
+          .querySelectorAll(".magnetic, .value-panel, .insight-card, .member-card, .instructor-visual")
+          .forEach((el) => {
+            let frame = 0;
+            const strong = el.matches(".btn-primary, .btn-secondary, .header-cta, .desktop-nav a, .member-links a, .footer-links a, .instructor-copy a");
+            const strength = strong ? 0.12 : 0.035;
+
+            el.addEventListener("mousemove", (event) => {
+              const pointer = event;
+              window.cancelAnimationFrame(frame);
+              frame = window.requestAnimationFrame(() => {
+                const rect = el.getBoundingClientRect();
+                const x = (pointer.clientX - (rect.left + rect.width / 2)) * strength;
+                const y = (pointer.clientY - (rect.top + rect.height / 2)) * strength;
+                const glowX = ((pointer.clientX - rect.left) / rect.width) * 100;
+                const glowY = ((pointer.clientY - rect.top) / rect.height) * 100;
+                el.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+                el.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+                el.style.setProperty("--glow-x", `${glowX.toFixed(2)}%`);
+                el.style.setProperty("--glow-y", `${glowY.toFixed(2)}%`);
+              });
+            });
+
+            el.addEventListener("mouseleave", () => {
+              window.cancelAnimationFrame(frame);
+              el.style.setProperty("--hover-x", "0px");
+              el.style.setProperty("--hover-y", "0px");
+              el.style.setProperty("--glow-x", "50%");
+              el.style.setProperty("--glow-y", "35%");
+            });
+          });
+      }
+    </script>
+  </body>
+</html>

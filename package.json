@@ -3,27 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "start": "astro preview --host 0.0.0.0",
+    "preview": "astro preview --host 0.0.0.0",
+    "lint": "astro check",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "latest",
-    "clsx": "latest",
-    "framer-motion": "latest",
-    "lucide-react": "latest",
-    "next": "15.5.20",
-    "react": "latest",
-    "react-dom": "latest",
-    "tailwind-merge": "latest",
-    "tailwindcss": "latest"
+    "astro": "^7.0.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "typescript": "^5.9.3"
   }
 }
