@@ -221,6 +221,58 @@ export default function Home() {
     return () => { document.body.style.overflow = ""; };
   }, [activeInsight]);
 
+  useEffect(() => {
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    const targets = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        ".insight-card, .member-card, .value-panel, .header-cta, .desktop-nav a, .hero-actions a, .member-links a, .footer-links a, .instructor-copy a",
+      ),
+    );
+
+    const cleanups = targets.map((element) => {
+      let frame = 0;
+      const isButton = element.matches(
+        ".header-cta, .desktop-nav a, .hero-actions a, .member-links a, .footer-links a, .instructor-copy a",
+      );
+      const strength = isButton ? 0.12 : 0.035;
+
+      const onMove = (event: MouseEvent) => {
+        window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(() => {
+          const rect = element.getBoundingClientRect();
+          const x = (event.clientX - (rect.left + rect.width / 2)) * strength;
+          const y = (event.clientY - (rect.top + rect.height / 2)) * strength;
+          const glowX = ((event.clientX - rect.left) / rect.width) * 100;
+          const glowY = ((event.clientY - rect.top) / rect.height) * 100;
+
+          element.style.setProperty("--hover-x", `${x.toFixed(2)}px`);
+          element.style.setProperty("--hover-y", `${y.toFixed(2)}px`);
+          element.style.setProperty("--glow-x", `${glowX.toFixed(2)}%`);
+          element.style.setProperty("--glow-y", `${glowY.toFixed(2)}%`);
+        });
+      };
+
+      const onLeave = () => {
+        window.cancelAnimationFrame(frame);
+        element.style.setProperty("--hover-x", "0px");
+        element.style.setProperty("--hover-y", "0px");
+        element.style.setProperty("--glow-x", "50%");
+        element.style.setProperty("--glow-y", "35%");
+      };
+
+      element.addEventListener("mousemove", onMove);
+      element.addEventListener("mouseleave", onLeave);
+      return () => {
+        window.cancelAnimationFrame(frame);
+        element.removeEventListener("mousemove", onMove);
+        element.removeEventListener("mouseleave", onLeave);
+      };
+    });
+
+    return () => cleanups.forEach((cleanup) => cleanup());
+  }, []);
+
   return (
     <main id="top">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
