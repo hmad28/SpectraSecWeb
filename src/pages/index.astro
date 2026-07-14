@@ -3,6 +3,8 @@ import "../styles/site.css";
 
 const telegramUrl = "https://telegram.me/+vvxMjHuYEOgxMWI1";
 const instagramUrl = "https://www.instagram.com/spectrasec.id/";
+const siteUrl = "https://www.spectrasec.xyz";
+const siteName = "SpectraSec";
 
 const insights = [
   {
@@ -197,11 +199,11 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://spectrasec.id/#organization",
-      name: "SpectraSec.id",
+      "@id": `${siteUrl}/#organization`,
+      name: siteName,
       alternateName: ["SpectraSec", "SpectraSec Cyber Security Community"],
-      url: "https://spectrasec.id",
-      logo: "https://spectrasec.id/images/spectrasec-logo.jpg",
+      url: siteUrl,
+      logo: `${siteUrl}/images/spectrasec-logo.jpg`,
       sameAs: [instagramUrl, telegramUrl],
       description: "Komunitas belajar dan media edukasi keamanan cyber Indonesia dengan fokus ethical hacking, web security, bug hunting, OSINT, dan responsible disclosure.",
       member: members.map((member) => ({
@@ -212,27 +214,27 @@ const structuredData = {
         description: member.summary,
         award: member.achievements,
         knowsAbout: [...member.tags, ...member.achievements],
-        image: member.image ? `https://spectrasec.id${member.image}` : undefined,
+        image: member.image ? `${siteUrl}${member.image}` : undefined,
         sameAs: member.links.map((link) => link[1]),
       })),
     },
     {
       "@type": "WebSite",
-      "@id": "https://spectrasec.id/#website",
-      url: "https://spectrasec.id",
-      name: "SpectraSec.id",
-      publisher: { "@id": "https://spectrasec.id/#organization" },
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteName,
+      publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "id-ID",
-      keywords: ["SpectraSec", "SpectraSec.id", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", "NASA Letter of Recognition", "KOMDIGI-CSIRT", "Nokia CVD Hall of Fame", ...memberNames],
+      keywords: ["SpectraSec", "SpectraSec.xyz", "komunitas cybersecurity Indonesia", "ethical hacking", "bug hunting", "NASA Letter of Recognition", "KOMDIGI-CSIRT", "Nokia CVD Hall of Fame", ...memberNames],
     },
     {
       "@type": "ItemList",
-      "@id": "https://spectrasec.id/#core-members",
-      name: "Core Members SpectraSec.id",
+      "@id": `${siteUrl}/#core-members`,
+      name: "Core Members SpectraSec",
       itemListElement: members.map((member, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://spectrasec.id/#${slug(member.name)}`,
+        url: `${siteUrl}/#${slug(member.name)}`,
         item: {
           "@type": "Person",
           name: member.name,
@@ -241,7 +243,7 @@ const structuredData = {
           description: member.summary,
           award: member.achievements,
           knowsAbout: [...member.tags, ...member.achievements],
-          image: member.image ? `https://spectrasec.id${member.image}` : undefined,
+          image: member.image ? `${siteUrl}${member.image}` : undefined,
           sameAs: member.links.map((link) => link[1]),
         },
       })),
@@ -249,8 +251,8 @@ const structuredData = {
   ],
 };
 
-const title = "SpectraSec.id | Komunitas Cyber Security & Ethical Hacking Indonesia";
-const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indonesia untuk ethical hacking, web security, bug hunting, OSINT, Linux, dan responsible disclosure bersama core member SpectraSec.";
+const title = "SpectraSec.xyz | Komunitas Cyber Security & Ethical Hacking Indonesia";
+const description = "SpectraSec.xyz adalah komunitas belajar keamanan siber Indonesia untuk ethical hacking, web security, bug hunting, OSINT, Linux, dan responsible disclosure bersama core member SpectraSec.";
 ---
 
 <!doctype html>
@@ -260,20 +262,25 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content={`SpectraSec, SpectraSec.id, komunitas cybersecurity Indonesia, ethical hacking Indonesia, bug hunting Indonesia, web security, OSINT, responsible disclosure, ${memberNames.join(", ")}, ${memberKeywords.join(", ")}`} />
+    <meta name="author" content="SpectraSec" />
+    <meta name="application-name" content="SpectraSec" />
+    <meta name="theme-color" content="#120b24" />
+    <meta name="keywords" content={`SpectraSec, SpectraSec.xyz, komunitas cybersecurity Indonesia, ethical hacking Indonesia, bug hunting Indonesia, web security, OSINT, responsible disclosure, ${memberNames.join(", ")}, ${memberKeywords.join(", ")}`} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <link rel="canonical" href="https://spectrasec.id/" />
+    <link rel="canonical" href={siteUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="id_ID" />
-    <meta property="og:site_name" content="SpectraSec.id" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://spectrasec.id/" />
-    <meta property="og:image" content="https://spectrasec.id/images/spectrasec-hero.webp" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={`${siteUrl}/images/spectrasec-hero.webp`} />
+    <meta property="og:image:alt" content="SpectraSec cyber security collective landing page" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://spectrasec.id/images/spectrasec-hero.webp" />
+    <meta name="twitter:image" content={`${siteUrl}/images/spectrasec-hero.webp`} />
+    <meta name="twitter:image:alt" content="SpectraSec cyber security collective landing page" />
     <link rel="icon" type="image/jpeg" href="/images/spectrasec-logo.jpg" />
     <link rel="apple-touch-icon" href="/images/spectrasec-logo.jpg" />
     <link rel="preload" as="image" href="/images/spectrasec-hero.webp" />
@@ -601,3 +608,5 @@ const description = "SpectraSec.id adalah komunitas belajar keamanan cyber Indon
     </script>
   </body>
 </html>
+
+
